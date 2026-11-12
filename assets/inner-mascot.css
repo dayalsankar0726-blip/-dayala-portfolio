@@ -1,0 +1,32 @@
+.sun{width:var(--sunny);height:var(--sunny);position:relative;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+/* Mascot (from the portfolio): 3x3 sprite sheets, one cell per head direction / reaction */
+.mascot{position:relative;display:block;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:pointer;user-select:none}
+.sun:not(.is--footer) .mascot{transform:scale(1.85);transform-origin:50% 45%}
+.mascot__squash{position:relative;display:block;width:100%;height:100%;transform-origin:50% 78%}
+.mascot__layer{position:absolute;inset:0;background-size:300% 300%;background-repeat:no-repeat;transition:opacity .08s}
+.mascot__dir{background-image:url("mascots/beard-directions.webp");background-position:50% 50%}
+.mascot__react{background-image:url("mascots/beard-reactions.webp");background-position:50% 0%;opacity:0}
+.mascot.is--reacting .mascot__dir{opacity:0}
+.mascot.is--reacting .mascot__react{opacity:1}
+/* Grins when a call-to-action is hovered */
+body:has([data-hover-sun-happy]:hover) .mascot:not(.is--reacting) .mascot__dir{opacity:0}
+body:has([data-hover-sun-happy]:hover) .mascot:not(.is--reacting) .mascot__react{opacity:1;background-position:100% 100%!important}
+/* Hovering the "Hi, I'm Dayala." box: the hero mascot shows its sparkle face */
+body:has(.welcome__h2-box-wrap:hover) .welcome-sun__transform .mascot:not(.is--reacting) .mascot__dir{opacity:0}
+body:has(.welcome__h2-box-wrap:hover) .welcome-sun__transform .mascot:not(.is--reacting) .mascot__react{opacity:1;background-position:100% 0%!important}
+.sun-chat-combo{display:inline-flex;align-items:center;gap:.75em}
+.chat-cloud{position:relative;background:var(--orange);color:var(--dark);border:var(--bw) solid #000;border-radius:.875em;padding:.5em .75em}
+.chat-cloud__p{display:block;font-weight:700;letter-spacing:-.025em;white-space:nowrap;line-height:.9;min-width:.5em}
+.chat-cloud__point{position:absolute;bottom:0;left:0;height:.8125em;width:auto;transform:translate(-44%,17%)}
+.sunny-fixed{position:fixed;z-index:90;left:2em;bottom:2em;pointer-events:none}
+.sunny-fixed .sun,.sunny-fixed .chat-cloud{pointer-events:all}
+
+
+.sunny-fixed{--sunny:4em}
+.sunny-fixed .chat-cloud{opacity:0;visibility:hidden;max-width:min(19em,calc(100vw - 10em));background:var(--chat-fill,var(--orange));background-image:none;transition:opacity .2s,visibility .2s}
+.sunny-fixed .chat-cloud.is-visible{opacity:1;visibility:visible}
+.sunny-fixed .chat-cloud__p{white-space:normal;line-height:1.4;font-size:.9em;letter-spacing:0}
+.sunny-fixed .chat-cloud__point path:first-child{fill:var(--chat-fill,var(--orange))}
+.gl-chip{display:none}
+@media(max-width:767px){.sunny-fixed{left:1em;bottom:1em}.sunny-fixed .chat-cloud{max-width:min(17em,calc(100vw - 8em))}}
+@media(prefers-reduced-motion:reduce){.sunny-fixed .chat-cloud,.mascot__layer{transition:none}}

@@ -1,0 +1,15 @@
+.DS_Store
+.AppleDouble
+._*
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.claude/
+.codex/
+node_modules/
+__pycache__/
+*.pyc
+*.log
+scratchpad/

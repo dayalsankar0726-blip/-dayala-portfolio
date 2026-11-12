@@ -1,0 +1,90 @@
+/* Shared compact scale for case studies, consistent with the portfolio. */
+:root{--section:4.5em}
+.cs-section{padding:var(--section) 0;scroll-margin-top:calc(var(--nav-h) + 1em)}
+.h2{font-size:2.9em;line-height:1.08}
+.cs-head{margin-bottom:2em;max-width:52em}
+.cs-head p{font-size:1.1em;line-height:1.5;margin-top:1em;max-width:42em}
+.cs-label{margin-bottom:1em}
+.cs-hero{padding-top:calc(var(--nav-h) + 2.5em)}
+.cs-title{font-size:4.1em;margin-top:.7em;max-width:14em;line-height:1.05}
+.cs-summary{font-size:1.1em;line-height:1.5;margin-top:1em;max-width:42em}
+.cs-hero__stage{margin-top:2.5em;padding-top:2.5em;border-radius:2em 2em 0 0}
+.hero-fan,.hero-win{font-size:.85em}
+.cs-meta>div{padding:1em}
+.cs-meta dd{font-size:.9em;line-height:1.4}
+.card{border-radius:1em}
+.card h3{font-size:1.2em;line-height:1.3}
+.card p{line-height:1.5}
+.beat,.pain,.feature,.ai-card,.persona__body{padding:1.25em}
+.beat__n{margin-bottom:.65em}
+.pain__icon{width:2.8em;height:2.8em;margin-bottom:.8em}
+.statement{font-size:1.6em;line-height:1.35;margin-bottom:2em}
+.goal{padding:2.2em;margin-top:3em;border-radius:1.5em}
+.goal p{font-size:1.05em;line-height:1.5;margin-top:1em}
+.stats{margin-top:2.5em}
+.stat{padding:1.3em 1em}
+.stat__v,.num__v{font-size:2.5em}
+.num{padding:1em}
+.insight{grid-template-columns:4em 1fr 1fr;gap:1.3em;padding:1.1em 0}
+.insight__n{width:2.7em;height:2.7em}
+.quote{margin-top:3em}
+.quote blockquote{font-size:1.9em;line-height:1.25}
+.persona__name{font-size:1.65em}
+.persona__quote{font-size:1em}
+.structure,.personas{margin-top:3em}
+.figure{max-width:64em;margin-left:auto;margin-right:auto}
+.figure figcaption{font-size:.85em;line-height:1.4;margin-top:.65em}
+.reel{gap:1.4em;padding-bottom:1.8em}
+.shot{flex-basis:12em}
+.shot__label{padding:.7em;margin-top:.8em;font-size:.9em}
+.arc{margin-bottom:2.5em}
+.arc__steps{height:12em}
+.next__card{padding:2.8em 2em;gap:1.1em;border-radius:2em}
+.next__card p{font-size:1em;line-height:1.5}
+@media(min-width:768px){.shot:has(.browser){flex-basis:30em}}
+@media(max-width:991px){:root{--section:3.5em}.cs-title{font-size:3.4em}.h2{font-size:2.5em}}
+@media(max-width:767px){
+ :root{--section:3em}
+ .h2{font-size:2.1em}.cs-title{font-size:2.65em}
+ .cs-hero{padding-top:calc(var(--nav-h) + 1.5em)}
+ .cs-hero__stage{margin-top:2em;padding-top:1.8em}
+ .hero-fan,.hero-win{font-size:1em}
+ .cs-summary,.cs-head p{font-size:1em}
+ .cs-meta>div{padding:.85em}
+ .statement{font-size:1.3em}
+ .goal{padding:1.5em}
+ .beat,.pain,.feature,.ai-card,.persona__body{padding:1.1em}
+ .insight{grid-template-columns:3em 1fr;gap:.8em}
+ .insight> :last-child{grid-column:2}
+ .quote blockquote{font-size:1.6em}
+ .arc__steps{height:auto;min-height:12em}
+ .next__card{padding:2em 1.2em}
+}
+
+/* Compact persona cards: smaller portraits and a narrower three-card group. */
+#personas{max-width:54em;margin-left:auto;margin-right:auto;gap:1.5em}
+#personas .persona__img{aspect-ratio:1010/900;max-height:none}
+#personas .persona__img img{object-fit:contain;object-position:center;transform:none}
+#personas .persona__body{padding:1em 1.15em}
+#personas .persona__name{font-size:1.5em}
+#personas .persona__meta{font-size:.8em;line-height:1.4}
+#personas .persona__quote{font-size:.95em;line-height:1.5;margin-top:.65em}
+#personas .persona__traits{margin-top:.8em;font-size:.72em;white-space:normal}
+@media(max-width:767px){#personas{max-width:28em}#personas .persona__img{max-height:none;aspect-ratio:1010/900}}
+
+/* Consistent component sizing on every case-study page. */
+:root{--case-card-gap:1.5em;--case-card-padding:1.25em;--case-persona-ratio:1010/900}
+.grid{gap:var(--case-card-gap)}
+.beat,.pain,.feature,.ai-card{padding:var(--case-card-padding)}
+#personas .persona__img,#personas .persona__art{aspect-ratio:var(--case-persona-ratio);height:auto;max-height:none;min-height:0}
+#personas .persona__art{padding:1em;gap:.7em}
+#personas .persona__avatar{width:4.5em;height:4.5em;font-size:1em}
+#personas .persona__role{font-size:.65em;letter-spacing:.08em;text-align:center}
+#personas .persona__chips{gap:.35em}
+#personas .persona__chips span{font-size:.7em}
+#personas .persona{height:100%}
+#personas .persona__body{flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:.5em}
+#personas .persona__body>p{margin-top:0}
+#personas .persona__traits{margin-top:auto;padding-top:.4em}
+.browser__screen img{object-fit:contain;object-position:top center}
+@media(max-width:767px){:root{--case-card-gap:1.2em;--case-card-padding:1.1em}#personas .persona__art{padding:1em}}
