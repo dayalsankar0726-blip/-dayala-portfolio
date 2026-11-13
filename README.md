@@ -1,6 +1,6 @@
 # Dayala Portfolio
 
-Personal UX design portfolio with enterprise SaaS, operations, and AI product case studies.
+Personal product design portfolio with enterprise SaaS, operations, and AI product case studies.
 
 ## Run locally
 
