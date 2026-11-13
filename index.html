@@ -173,6 +173,7 @@ main{position:relative;overflow-x:clip}
 .about__text{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:2em;padding-top:1em;text-align:center}
 .about__text p{max-width:25em}
 .rotate{position:absolute;top:0;left:0;width:20.0625em;height:100%;pointer-events:none}
+.about__strip{display:none}
 .rotate.is--flipped{left:auto;right:0;transform:rotate(180deg)}
 .rotate-circle{position:absolute;top:50%;right:25%;width:200%;aspect-ratio:1;transform:translateY(-50%)}
 .rotate-circle__list{position:absolute;inset:0}
@@ -486,9 +487,18 @@ main{position:relative;overflow-x:clip}
   .stacked-cards__drag-p{display:block}
   .rainbow-vertical__1{width:19.25em}
   .h2{font-size:3.5em}
-  .about__tile{padding:15em 1em}
-  .rotate{width:9em}
-  .rotate-circle__image-wrap{width:5.5em}
+  .about__tile{padding:3.5em 1em;gap:2.5em}
+  .about .rotate{display:none} /* phones: photos sit in a row of 3 above and 3 below the text instead */
+  .about__strip{display:flex;justify-content:center;gap:.75em;position:relative;z-index:2}
+  .about__strip-item{width:6.25em;aspect-ratio:1;border:var(--bw) solid var(--orange);background:var(--orange);border-radius:.75em;overflow:hidden;box-shadow:var(--shadow-sm)}
+  .about__strip-item:nth-child(1){transform:rotate(-5deg) translateY(.35em)}
+  .about__strip-item:nth-child(2){transform:rotate(2deg)}
+  .about__strip-item:nth-child(3){transform:rotate(6deg) translateY(.35em)}
+  .about__strip.is--top .about__strip-item:nth-child(2){border-color:var(--mango);background:var(--mango)}
+  .about__strip.is--top .about__strip-item:nth-child(3){border-color:var(--yellow);background:var(--yellow)}
+  .about__strip.is--bottom .about__strip-item:nth-child(1){border-color:var(--yellow);background:var(--yellow)}
+  .about__strip.is--bottom .about__strip-item:nth-child(2){border-color:var(--pink);background:var(--pink)}
+  .about__strip.is--bottom .about__strip-item:nth-child(3){border-color:var(--blue);background:var(--blue)}
   .speakers__row{padding-bottom:var(--section)}
   .speakers__col{width:100%;transform:none !important}
   .speakers__grid-lines-group{width:100%}
@@ -505,8 +515,7 @@ main{position:relative;overflow-x:clip}
   .community__col-grid{grid-template-columns:repeat(2,1fr)}
   .community__grid-lines{display:none}
   .tools{flex-direction:column;gap:1.5em}
-  #story .rotate{display:none} /* no room beside the tool list on phones; the pills carry the logos */
-  #story .about__tile{padding:6em 1em}
+
   .tweets__h2{font-size:3.2em}
   .tweets__content-item{padding-top:calc(var(--section) * 2.5)}
   .tweets__title{top:calc(var(--section) * 2.5 + 6em)}
@@ -1185,6 +1194,16 @@ const STORY_WORK = [
   ['tractor-task-flows', 'Task flows', '30% 50%'], ['tractor-component-library', 'Component library', '50% 50%'],
   ['bakery-ops-dashboard', 'Bakery staff dashboard', '0% 0%'], ['billora-dashboard', 'Billora dashboard', '0% 0%'],
 ];
+// Phones: the circles are hidden, so show 3 of the same images above the text and 3 below
+const addStrips = (tileSel, imgs) => {
+  const tile = $(tileSel), text = $('.about__text', tile);
+  const row = (cls, list) => `<div class="about__strip ${cls}" aria-hidden="true">${list.map(h => `<div class="about__strip-item">${h}</div>`).join('')}</div>`;
+  text.insertAdjacentHTML('beforebegin', row('is--top', imgs.slice(0, 3)));
+  text.insertAdjacentHTML('afterend', row('is--bottom', imgs.slice(3, 6)));
+};
+addStrips('#about .about__tile', ABOUT_PORTRAITS.slice(0, 6).map(([f, pos]) => img('assets/portraits/' + f, '', pos)));
+$$('#about .about__strip img[src$="portrait-desk.webp"]').forEach(i => Object.assign(i.style, { transform: 'scale(1.6)', transformOrigin: '62% 50%' }));
+addStrips('#story .about__tile', STORY_WORK.slice(0, 6).map(([f, , pos]) => img('assets/work/' + f + '.webp', '', pos)));
 const STORY_PHOTOS = [
   ['field-visit', 'Talking with a worker beside a large charcoal heap', '50% 50%'], ['summit-arms', 'Arms wide on a mountain summit', '72% 45%'],
   ['window-desk', 'Working at a laptop by a window', '40% 60%'], ['cave', 'Two friends under a huge rock overhang', '47% 65%'],
