@@ -37,3 +37,5 @@
 .about-title-word::before,.about-title-word::after{content:attr(data-text);position:absolute;left:0;top:0;white-space:nowrap;pointer-events:none}
 .about-title-word::before{z-index:-2;color:var(--dark);-webkit-text-stroke:.25em var(--dark);filter:drop-shadow(0 .1em 0 rgb(0 0 0 / .15))}
 .about-title-word::after{z-index:-1;color:#fff;-webkit-text-stroke:.21em #fff}
+
+.principle{position:relative}.principle:focus-visible{outline:3px solid var(--light);outline-offset:5px}
