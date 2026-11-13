@@ -30,3 +30,10 @@
 @media(max-width:767px){:root{--site-unit:calc(clamp(480px,100vw,767px)/24.375);--page-gutter:1em;--section:3em}h1{font-size:2.65em}h2{font-size:2.1em}.nav-logo{position:absolute;left:var(--page-gutter);transform:none}.nav-inner{gap:.6em}.nav-links{font-size:.8em;gap:.8em}.nav-inner .btn{font-size:1em;padding-inline:1.25em}.nav-logo img{height:2.7rem}.path,.outside{grid-template-columns:minmax(0,1fr);gap:2em}.about-hero{gap:2em;padding-top:calc(var(--nav-h) + 2em);padding-bottom:3em}.about-story h1{font-size:2.65em}.story-lead{font-size:1.1em}.about-portrait-column{width:min(100% - 1em,22em)}.principles,.experience-list,.education-list{grid-template-columns:minmax(0,1fr)}.experience-top{flex-wrap:wrap}.contact.container{padding:2em 1.25em}.page-footer{padding-bottom:6em}}
 @media(max-width:479px){:root{--site-unit:calc(clamp(320px,100vw,479px)/24.375)}}
 @media(prefers-reduced-motion:reduce){.btn{transition:none}}
+
+/* Homepage sticker outline, retaining About Me's title size and alignment. */
+.about-story h1{position:relative;isolation:isolate}
+.about-title-word{position:relative;display:inline-block;isolation:isolate;line-height:inherit}
+.about-title-word::before,.about-title-word::after{content:attr(data-text);position:absolute;left:0;top:0;white-space:nowrap;pointer-events:none}
+.about-title-word::before{z-index:-2;color:var(--dark);-webkit-text-stroke:.25em var(--dark);filter:drop-shadow(0 .1em 0 rgb(0 0 0 / .15))}
+.about-title-word::after{z-index:-1;color:#fff;-webkit-text-stroke:.21em #fff}
