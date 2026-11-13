@@ -8,6 +8,10 @@ Parameters:
     Type: String
     Default: dayalsankar0726-blip/-dayala-portfolio
     Description: owner/name of the GitHub repo allowed to deploy
+  GitHubRepoWithIds:
+    Type: String
+    Default: dayalsankar0726-blip@355866201/-dayala-portfolio@1455510764
+    Description: Same repo in GitHub's immutable owner@id/name@id form (newer OIDC subject claims)
   CreateGitHubOIDCProvider:
     Type: String
     AllowedValues: ["true", "false"]
@@ -131,7 +135,9 @@ Resources:
             Condition:
               StringEquals:
                 token.actions.githubusercontent.com:aud: sts.amazonaws.com
-                token.actions.githubusercontent.com:sub: !Sub "repo:${GitHubRepo}:ref:refs/heads/main"
+                token.actions.githubusercontent.com:sub:
+                  - !Sub "repo:${GitHubRepo}:ref:refs/heads/main"
+                  - !Sub "repo:${GitHubRepoWithIds}:ref:refs/heads/main"
       Policies:
         - PolicyName: deploy-site
           PolicyDocument:
