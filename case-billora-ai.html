@@ -795,22 +795,22 @@ const SCR = {
 const study = {
   hero: {
     eyebrow: 'Case Study · FinTech · Enterprise Web App · 2026',
-    summary: 'Billora AI replaces a patchwork of accounting software, Word invoices and email approvals for a global IT services firm — one platform that takes consultant hours all the way to a reconciled bank payment.',
+    summary: 'Billora AI replaces a patchwork of accounting software, Word invoices and email approvals for a global IT services firm: one platform that takes consultant hours all the way to a reconciled bank payment.',
     tags: ['Enterprise Web App', 'UX Research', 'UX / UI Design', 'Vibe Coding', '~3 Months'],
     meta: [['Role', 'Requirements research, UX/UI design, vibe-coded front end'], ['Team', 'Me, a product owner, developers and QA'], ['Client', 'Internal · global IT services firm'], ['Platform', 'Desktop web app · Phase 1'], ['Users', '6 roles · admin, finance, HR, delivery, consultants, audit'], ['Status', 'In UAT · testing with real invoices']],
   },
   reality: {
     body: 'Consultant hours, manager approvals, invoice maths, GST, sign-off, delivery and payment follow-up were spread across email threads, accounting software, Word templates and the bank portal. Each handoff was a place for work to stall or for a number to be keyed in wrong.',
     beats: [
-      ['Hours live somewhere else', "Finance can't invoice until timesheets are submitted and approved — and chasing them happened over email, one consultant at a time."],
+      ['Hours live somewhere else', "Finance can't invoice until timesheets are submitted and approved, and chasing them happened over email, one consultant at a time."],
       ['The maths is manual', 'Rates, days, currency and GST rules were applied by hand for every client and legal entity, so a single slip meant a reissued invoice.'],
       ['Sign-off sits in an inbox', 'Invoices waited for approval in email threads with no queue, no priority and no sense of how long they had been waiting.'],
       ["Nobody knows what's paid", 'Matching bank credits to invoices was done by hand. When a client paid several invoices in one transfer, working out which ones were settled was detective work.'],
     ],
-    stats: [['4 tools', 'Email, accounting software, Word templates and the bank portal — no single source of truth'], ['6 handoffs', 'Consultant → manager → finance → approver → client → bank'], ['2 currencies', 'INR and USD billing across several legal entities'], ['5 tax modes', 'IGST, CGST+SGST, SEZ/LUT, zero-rated and exempt']],
+    stats: [['4 tools', 'Email, accounting software, Word templates and the bank portal, with no single source of truth'], ['6 handoffs', 'Consultant → manager → finance → approver → client → bank'], ['2 currencies', 'INR and USD billing across several legal entities'], ['5 tax modes', 'IGST, CGST+SGST, SEZ/LUT, zero-rated and exempt']],
   },
   problem: {
-    statement: 'The finance team spent their week chasing — timesheets, approvals and payments — instead of checking the numbers that mattered.',
+    statement: 'The finance team spent their week chasing timesheets, approvals and payments instead of checking the numbers that mattered.',
     pains: [
       ['Chasing timesheets', "Invoices couldn't start until hours were in, and there was no view of who hadn't submitted or which manager was holding things up."],
       ['Manual invoice maths', 'Rates, units, currency and the right GST treatment were worked out by hand per client, entity and state.'],
@@ -823,11 +823,11 @@ const study = {
     steps: ['Timesheet submitted', 'Timesheet approved', 'Invoice generated', 'Invoice approved', 'Invoice sent', 'Payment reconciled'],
   },
   research: {
-    body: "It started with the PRD from stakeholders. I turned every open point into a question list, then sat down with the HR and finance teams until each question had an answer — and watched them run a real billing cycle to see where the answers and the actual work differed. I mapped today's process as a flowchart, designed a new one around a single system, and built the dashboard straight from it — using vibe coding to turn my flows into working screens, while every flow, rule and decision stayed mine.",
+    body: "It started with the PRD from stakeholders. I turned every open point into a question list, then sat down with the HR and finance teams until each question had an answer, then watched them run a real billing cycle to see where the answers and the actual work differed. I mapped today's process as a flowchart, designed a new one around a single system, and built the dashboard straight from it, using vibe coding to turn my flows into working screens, while every flow, rule and decision stayed mine.",
     images: [['research-01-prd.svg', 'A PRD turned into a list of open questions about timesheets, rates, GST, sign-off and payments', '01 · PRD → question list'], ['research-02-interviews.svg', 'Topics covered with the HR team and the finance team', '02 · Sessions with HR and finance'], ['research-03-observe.svg', 'The current billing cycle across email, accounting software, Word and the bank portal, with a pain point at each step', '03 · Observed the current work']],
     numbers: [[2, 'Teams interviewed'], [6, 'Roles mapped'], [2, 'Flowcharts · now & next']],
     methods: ['PRD review', 'Question list', 'Interviews with HR & finance', 'Observing current work', 'Current-state flowchart', 'Future-state flowchart', 'Vibe-coded prototype', 'UAT with real invoices'],
-    quote: ['One client releases a single payment for many invoices. You have to go into their system and work out which invoice it was released for — and which ones they missed.', 'Finance leader · demo review (lightly edited)'],
+    quote: ['One client releases a single payment for many invoices. You have to go into their system and work out which invoice it was released for, and which ones they missed.', 'Finance leader · demo review (lightly edited)'],
     personas: [
       ['Priya', 'Finance Admin · builds, approves and reconciles invoices', 'I spend more time chasing timesheets and matching payments than actually checking the numbers.', 'Accuracy-first · Owns month-end', ['PS', 'Finance Admin', ['Invoices', 'GST', 'Payments'], 'var(--mango)']],
       ['Kavitha', "Delivery / Project Manager · approves her team's hours", 'Just show me whose hours are waiting on me, and let me approve them without digging through email.', 'Time-poor · Approver', ['KN', 'Delivery / Project Manager', ['Timesheets', 'Billability'], 'var(--pink)']],
@@ -835,34 +835,34 @@ const study = {
     ],
   },
   insights: {
-    body: 'Five findings — each one shaped a part of the platform.',
+    body: 'Five findings. Each one shaped a part of the platform.',
     items: [
-      ['F1', 'The pain starts after the invoice is sent.', 'In the interviews, finance kept coming back to follow-ups and reconciliation — not invoice creation — as where the effort went.'],
+      ['F1', 'The pain starts after the invoice is sent.', 'In the interviews, finance kept coming back to follow-ups and reconciliation, not invoice creation, as where the effort went.'],
       ['F2', "Clients don't all pay the same way.", 'Some clients pay one transfer per invoice; others send one lump sum for many. Reconciliation has to handle both.'],
-      ['F3', 'Every role needs a different front door.', 'A consultant, an approver and an auditor open the app for completely different reasons — one home screen can\'t serve them all.'],
-      ['F4', 'Someone has to see every action.', 'With high client volumes, monitoring by hand invites mistakes and eats time. The Super Admin needs A-to-Z control — create, change and oversee — with a trail of every action across all six roles.'],
-      ['F5', 'Tax is where trust is won or lost.', 'Finance would only trust automation if they could see — and, with control, override — the tax treatment before an invoice is final.'],
+      ['F3', 'Every role needs a different front door.', 'A consultant, an approver and an auditor open the app for completely different reasons. One home screen can\'t serve them all.'],
+      ['F4', 'Someone has to see every action.', 'With high client volumes, monitoring by hand invites mistakes and eats time. The Super Admin needs A-to-Z control (create, change and oversee) with a trail of every action across all six roles.'],
+      ['F5', 'Tax is where trust is won or lost.', 'Finance would only trust automation if they could see and, with control, override the tax treatment before an invoice is final.'],
     ],
   },
   solution: {
-    body: 'Six role-based workspaces — Super Admin, Finance Admin, HR Admin, Delivery / Project Manager, Consultant and Auditor. Each person lands exactly where their part of the flow begins, and sees only the actions their role allows.',
+    body: 'Six role-based workspaces: Super Admin, Finance Admin, HR Admin, Delivery / Project Manager, Consultant and Auditor. Each person lands exactly where their part of the flow begins, and sees only the actions their role allows.',
     features: [
-      ['5-step invoice wizard', 'Select entities → fetch approved timesheets → calculate rates and tax → preview → generate and submit. Submit for Approval unlocks only when every step is complete, and the preview shows the exact invoice before it exists.', "Why not one long form: GST depends on the entity, client and state, so those must come first — and a single form let incomplete invoices through and felt heavy. Steps plus a locked submit prevent errors, and finance sees the exact invoice before it's created (F5)."],
-      ['Role-based home screens', "Six roles — from super admin to auditor — each land on the screen their work starts on, with only the actions they're allowed to take. The demo build carried eight roles to explore the idea with stakeholders; once roles were finalised, Signing Authority and Executive were removed — they didn't exist in the real org and only added permission combinations to build and test.", "Why not one shared dashboard: anyone could reach — and change — data that wasn't theirs. Separate screens enforce data access (consultants never see rates), match each role's one daily job, and make onboarding faster (F3, F4)."],
-      ['Approvals with SLAs', 'A single approval queue with priority, a 48–72 hour time limit on each request and clear breach flags — no more sign-off buried in email.', 'Why not a plain approval list: approvals sat in email for days, nobody could tell who was holding an invoice, and urgent ones waited behind routine ones. Leadership also wanted turnaround visible.'],
+      ['5-step invoice wizard', 'Select entities → fetch approved timesheets → calculate rates and tax → preview → generate and submit. Submit for Approval unlocks only when every step is complete, and the preview shows the exact invoice before it exists.', "Why not one long form: GST depends on the entity, client and state, so those must come first, and a single form let incomplete invoices through and felt heavy. Steps plus a locked submit prevent errors, and finance sees the exact invoice before it's created (F5)."],
+      ['Role-based home screens', "Six roles, from super admin to auditor, each land on the screen their work starts on, with only the actions they're allowed to take. The demo build carried eight roles to explore the idea with stakeholders; once roles were finalised, Signing Authority and Executive were removed because they didn't exist in the real org and only added permission combinations to build and test.", "Why not one shared dashboard: anyone could reach and change data that wasn't theirs. Separate screens enforce data access (consultants never see rates), match each role's one daily job, and make onboarding faster (F3, F4)."],
+      ['Approvals with SLAs', 'A single approval queue with priority, a 48 to 72 hour time limit on each request and clear breach flags, so no more sign-off buried in email.', 'Why not a plain approval list: approvals sat in email for days, nobody could tell who was holding an invoice, and urgent ones waited behind routine ones. Leadership also wanted turnaround visible.'],
       ['Reconciliation panel', 'Upload a bank statement and payments are matched to invoices automatically, with matched, partial and unmatched states and the UTR kept on record. Currently in testing.', 'Targets the work that happens after sending (F1, F2).'],
-      ['Tax built into the flow', 'GST treatment is suggested from client and entity data — IGST, CGST+SGST, SEZ/LUT — with controlled overrides that are always logged.', 'Automation finance can check, not just trust (F5).'],
+      ['Tax built into the flow', 'GST treatment is suggested from client and entity data (IGST, CGST+SGST, SEZ/LUT) with controlled overrides that are always logged.', 'Automation finance can check, not just trust (F5).'],
       ['Aging & receivables at a glance', 'Outstanding, overdue and aging buckets on the finance dashboard, with follow-up and reminders one click away.', "Know what's unpaid without asking anyone (F1)."],
     ],
     structure: [['role-map.svg', 'Information architecture: six roles around Billora AI, each with its own workspace', 'Information architecture · six roles, six front doors'], ['invoice-lifecycle.svg', 'Invoice lifecycle from Draft through Pending approval, Approved, Sent and Partially paid to Paid or Overdue', 'Invoice lifecycle · one clear status']],
   },
   ai: {
-    body: 'The goal was to remove the manual work, not the people. AI handles the repetitive checks — tax, compliance, matching and chasing — and every suggestion stays visible and overridable, so finance can verify it instead of having to trust it blindly.',
+    body: 'The goal was to remove the manual work, not the people. AI handles the repetitive checks (tax, compliance, matching and chasing), and every suggestion stays visible and overridable, so finance can verify it instead of having to trust it blindly.',
     today: [
-      ['GST recommendation', 'Suggests IGST, CGST+SGST or SEZ/LUT from the entity, client and state — finance can override, and every override is logged.'],
+      ['GST recommendation', 'Suggests IGST, CGST+SGST or SEZ/LUT from the entity, client and state. Finance can override, and every override is logged.'],
       ['Compliance check', 'Validates GSTIN, HSN/SAC codes and filing dates before an invoice is generated, so errors are caught before they reach a client.'],
       ['Automatic bank matching', 'Matches bank-statement lines to open invoices and surfaces partial and unmatched payments for review. Still in testing.'],
-      ['Smart reminders', 'Sends payment reminders on schedule — before the due date, then follow-ups, a final notice and escalation — without anyone chasing by hand.'],
+      ['Smart reminders', 'Sends payment reminders on schedule (before the due date, then follow-ups, a final notice and escalation) without anyone chasing by hand.'],
     ],
     next: [
       ['PO / SOW reading', 'Read purchase orders and SOWs to fill in client, rate and assignment data automatically.'],
@@ -872,12 +872,12 @@ const study = {
     ],
   },
   journey: {
-    body: 'I mapped how billing worked today, then redesigned the flow around one system — the future-state flowchart is what the dashboard was built from. Each step now has an owner, a status and a next action.',
+    body: 'I mapped how billing worked today, then redesigned the flow around one system. The future-state flowchart is what the dashboard was built from. Each step now has an owner, a status and a next action.',
     steps: [['Hours approved by the manager', 'Ready', 'var(--pink)'], ['Invoice built in the wizard', 'In control', 'var(--mango)'], ['Approved inside the SLA', 'Unblocked', 'var(--yellow)'], ['Sent and tracked', 'Visible', 'var(--light-plus)'], ['Payment matched from the bank file', 'Closed', 'var(--orange)']],
     images: [['flow-current.svg', 'Current-state flowchart: six handoffs across email, accounting software, Word and the bank portal, with a pain point at each step', 'Current-state flowchart · before Billora'], ['flow-future.svg', 'Future-state flowchart: the same six steps inside Billora AI, each with an owner and a visible status', 'Future-state flowchart · what the dashboard was built from']],
   },
   screens: {
-    body: 'Built straight from the future-state flowchart with vibe coding — I described each screen and flow to an AI coding assistant and refined the result, then a front-end developer tidied the code structure (about 20% of the build effort). Stakeholders clicked through real flows instead of static mock-ups. Desktop-first for Phase 1; company and client names are fictional.',
+    body: 'Built straight from the future-state flowchart with vibe coding. I described each screen and flow to an AI coding assistant and refined the result, then a front-end developer tidied the code structure (about 20% of the build effort). Stakeholders clicked through real flows instead of static mock-ups. Desktop-first for Phase 1; company and client names are fictional.',
     items: [
       ['login-roles', 'Role-based sign-in', 'Six roles, each with its own starting point.'],
       ['dashboard', 'Finance dashboard', 'Collected, outstanding, overdue and pending sign-offs in one view.'],
@@ -886,7 +886,7 @@ const study = {
       ['invoices', 'Invoice management', 'Every invoice, its status and its tax treatment.'],
       ['approvals', 'Approvals', 'One queue, with SLA breaches called out.'],
       ['payments', 'Payments', 'Cashflow, aging buckets and overdue follow-ups.'],
-      ['reconciliation', 'Bank reconciliation', 'Upload a bank file and payments are matched automatically — in testing.'],
+      ['reconciliation', 'Bank reconciliation', 'Upload a bank file and payments are matched automatically in testing.'],
       ['reports', 'Reports', 'Revenue, collection rate and billable hours.'],
       ['master-data', 'Master data', 'Clients, entities, tax and terms in one place.'],
       ['super-admin', 'Super admin', 'A-to-Z control, with every action across all six roles in view.'],
@@ -894,7 +894,7 @@ const study = {
     system: [['design-system-foundations.jpg', 'Design system foundations: brand colour scales, status colours, Poppins and JetBrains Mono type, radius, shadow and spacing', 'Design system · foundations'], ['design-system-components.jpg', 'Design system components: buttons, invoice status chips, wizard stepper, table row, SLA alert, KPI card and inputs', 'Design system · components']],
   },
   impact: {
-    body: 'Billora AI is in its final round of user-acceptance testing — the finance and HR teams who own this work are running real invoices through it. These figures come from that testing, compared with the old manual process.',
+    body: 'Billora AI is in its final round of user-acceptance testing. The finance and HR teams who own this work are running real invoices through it. These figures come from that testing, compared with the old manual process.',
     metrics: [['~', 60, '%', 'Less time to prepare an invoice', 'UAT · no manual maths or re-keying'], ['≤ ', 48, 'h', 'Invoice sign-off', 'UAT · SLA-tracked, not open-ended email'], ['~', 80, '%', 'Bank lines matched automatically', 'UAT · reconciliation still in testing'], ['~', 90, '%', 'Fewer calculation errors', 'UAT · rates and GST from master data']],
     note: 'Figures are approximate and from final UAT, not yet from production. Testing also surfaced the next problem to solve: clients who pay many invoices in one lump sum need a payment split across invoices, with any skipped invoice flagged automatically.',
     beforeAfter: [
@@ -907,8 +907,8 @@ const study = {
     next: ['lump-sum-concept.jpg', 'Concept: one bank credit split across invoices from an uploaded remittance file, with a skipped invoice flagged as short-paid and sent into the reminder ladder', "What's next · lump-sum reconciliation concept"],
   },
   reflection: {
-    body: 'I started out designing a faster way to make invoices. Watching finance work — and listening in the demo reviews — showed the real cost was everything after: approvals, follow-ups and matching payments. Vibe coding straight from the future-state flowchart let me build the full flow in about three months and put clickable screens in front of stakeholders early. The demo carried eight roles; their feedback confirmed the real six, and surfaced the lump-sum payments that became the next problem to solve. The honest next step is lump-sum reconciliation and measured results from UAT.',
-    takeaways: ['Design for the whole flow, not the screen that starts it.', "Clients' payment habits are a design input, not an edge case.", "Show permissions in the UI — don't make people discover them.", 'A working prototype gets sharper feedback than any static mock-up.'],
+    body: 'I started out designing a faster way to make invoices. Watching finance work and listening in the demo reviews showed the real cost was everything after: approvals, follow-ups and matching payments. Vibe coding straight from the future-state flowchart let me build the full flow in about three months and put clickable screens in front of stakeholders early. The demo carried eight roles; their feedback confirmed the real six, and surfaced the lump-sum payments that became the next problem to solve. The honest next step is lump-sum reconciliation and measured results from UAT.',
+    takeaways: ['Design for the whole flow, not the screen that starts it.', "Clients' payment habits are a design input, not an edge case.", "Show permissions in the UI. Don't make people discover them.", 'A working prototype gets sharper feedback than any static mock-up.'],
   },
 };
 

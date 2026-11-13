@@ -14,10 +14,10 @@ Open http://127.0.0.1:3000 in your browser. No build step is required.
 
 ## Pages
 
-- `index.html` — portfolio homepage
-- `case-tractor-connect.html` — Tractor Connect
-- `case-staff-dashboard.html` — Bakery Order Operations
-- `case-billora-ai.html` — Billora AI
+- `index.html`: portfolio homepage
+- `case-tractor-connect.html`: Tractor Connect
+- `case-staff-dashboard.html`: Bakery Order Operations
+- `case-billora-ai.html`: Billora AI
 
 Shared styles, scripts, and images are in `assets/`.
 

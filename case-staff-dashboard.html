@@ -757,15 +757,15 @@ const study = {
   reality: {
     body: 'The client is a family-run Middle Eastern sweets factory in the US Midwest, more than 45 years old. Beyond the shop counter, much of the work is bulk and wholesale: retailers, caterers and grocery chains ordering trays of baklava, maamoul and knafeh for several locations at once, shipped by carrier. This project covers that operation; walk-in shop sales are out of scope.',
     beats: [
-      ['Orders arrive everywhere', 'Email, fax and the website — each in its own format, and each one read and typed in by hand.'],
+      ['Orders arrive everywhere', 'Email, fax and the website, each in its own format, and each one read and typed in by hand.'],
       ['One customer, many addresses', 'A single wholesale order can ship to a warehouse, a distribution center and several retail stores.'],
-      ['Shipping has hard rules', "Carriers cap a package at 50 lb, so heavy orders must be split — and one wrong address means a box that doesn't arrive."],
+      ['Shipping has hard rules', "Carriers cap a package at 50 lb, so heavy orders must be split, and one wrong address means a box that doesn't arrive."],
       ['Status lives in people', 'Which orders are imported, labelled, packed or delayed was answered by asking around, not by looking.'],
     ],
     stats: [['45+ yrs', 'Family-run, built on craft and consistency rather than software'], ['3', 'Order channels: email, fax and the website'], ['1 → many', 'One wholesale order, many ship-to addresses'], ['50 lb', 'Carrier limit per package, so heavy orders split into shipments']],
   },
   problem: {
-    statement: 'Every order had to be read from its source, typed in, checked against addresses and carrier rules, then chased through packing and shipping — with no single place that showed where it stood. Peak season multiplied all of it.',
+    statement: 'Every order had to be read from its source, typed in, checked against addresses and carrier rules, then chased through packing and shipping, with no single place that showed where it stood. Peak season multiplied all of it.',
     pains: [
       ['Manual re-entry', 'Staff read each email, fax or web order and typed every line, customer and address into the system by hand.'],
       ['Shipping errors found late', 'Overweight packages and invalid addresses surfaced at the label or after dispatch, when they cost the most to fix.'],
@@ -800,7 +800,7 @@ const study = {
       ['A dashboard built around exceptions', "Orders received, pending, imported for review, ready to ship, delayed, address issues and inventory alerts, with today's activity beside them.", 'Staff start on what needs a person, instead of scanning long lists for problems (F5).'],
       ['Imported Orders Review', 'Orders from email, fax and the website are extracted by AI and shown with a confidence score, a link to the source and an extraction log. Staff accept or reject each one.', 'Why not auto-accept: extraction can misread a custom order. Showing confidence and source makes checking fast and trustworthy (F1, F2, F6).'],
       ['Order entry for multi-location customers', 'Choose the customer and their details, payment terms and saved addresses load. Pick the ship-to addresses, then add products; the batch is assigned automatically.', 'Wholesale orders fan out to many stores and warehouses, so addresses sit inside the order flow (F3).'],
-      ['Review & Submit', 'Customer, billing, payment terms and every shipment — method, expected delivery, weight, box size and charge — on one screen before submitting.', 'Errors are cheapest to fix before a label prints (F2, F4).'],
+      ['Review & Submit', 'Customer, billing, payment terms and every shipment (method, expected delivery, weight, box size and charge) on one screen before submitting.', 'Errors are cheapest to fix before a label prints (F2, F4).'],
       ['Carrier-aware shipments', 'Orders over the 50 lb carrier limit split into shipments automatically, with an auto-balance option and a carrier choice per shipment.', 'Weight limits are a rule, so the system applies them instead of staff (F4).'],
       ['Address validation with a suggested fix', 'A failed address is flagged on the order timeline with a suggested correction. Staff auto-fix it or edit it by hand.', 'Catches the problem before dispatch, and keeps the final say with staff (F4, F6).'],
     ],
@@ -811,7 +811,7 @@ const study = {
       ['Order extraction', 'Reads orders from email, fax and the website into structured orders, with a confidence score, the source and an audit trail.'],
       ['Address suggestions', 'When an address fails validation, suggests a corrected one that staff can apply or edit.'],
       ['Customer Auto-Fill', 'Paste an email, fax or call note and the new-customer form fills itself, including multiple addresses and payment terms. Designed; not yet connected in the build.'],
-      ['Review before anything moves', 'Every AI result waits for a person to accept, reject or correct it — extraction is a draft, not a decision.'],
+      ['Review before anything moves', 'Every AI result waits for a person to accept, reject or correct it. Extraction is a draft, not a decision.'],
     ],
     next: [
       ['Demand forecasting', 'Predict busy weeks like Christmas from past orders, so production and stock are ready.'],
