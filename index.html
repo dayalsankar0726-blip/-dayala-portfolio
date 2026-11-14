@@ -938,13 +938,13 @@ main{position:relative;overflow-x:clip}
         </div>
       </div>
       <div class="about__bottom">
-        <div class="exp" aria-label="Experience">
-          <p class="exp__label">Experience</p>
+        <div class="exp" aria-label="Education">
+          <p class="exp__label">Education</p>
           <ol class="exp__list">
-            <li class="exp__item"><span class="exp__dot is--orange"></span><img class="exp__logo" src="assets/logos/color/info-services.png" alt="Info Services" decoding="async"><span class="exp__years">Aug 2022 to Present</span><b class="exp__role">Senior UX/UI Designer</b><span class="exp__org">Info Services · Enterprise SaaS</span></li>
-            <li class="exp__item"><span class="exp__dot is--blue"></span><img class="exp__logo is--square" src="assets/logos/color/macapp-studio.png" alt="MacApp Studio" decoding="async"><span class="exp__years">Jul 2020 to Aug 2022</span><b class="exp__role">UX/UI Designer</b><span class="exp__org">MacApp Studio · Product designing</span></li>
-            <li class="exp__item"><span class="exp__dot is--green"></span><span class="exp__icon is--green" role="img" aria-label="Madura Digitals"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l6 7-6 11-6-11z"/><path d="M12 13v8M9.5 10h5"/><circle cx="12" cy="10" r="1.2"/></svg></span><span class="exp__years">Jan 2019 to Jun 2020</span><b class="exp__role">Graphic Designer</b><span class="exp__org">Madura Digitals · Branding &amp; digital design</span></li>
-            <li class="exp__item"><span class="exp__dot is--yellow"></span><span class="exp__icon is--yellow is--mono" role="img" aria-label="Sundaram Clayton">CL</span><span class="exp__years">Jul 2017 to Jul 2018</span><b class="exp__role">Engineering Apprentice</b><span class="exp__org">Sundaram Clayton · BMW RR 310 engine line</span></li>
+            <li class="exp__item"><span class="exp__dot is--orange"></span><span class="exp__icon is--orange" role="img" aria-label="Design course"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l3 6-3 12-3-12z"/><path d="M9 9h6"/><circle cx="12" cy="6" r="1"/></svg></span><span class="exp__years">2024</span><b class="exp__role">Product Designing</b><span class="exp__org">Design for Change</span></li>
+            <li class="exp__item"><span class="exp__dot is--blue"></span><span class="exp__icon is--blue" role="img" aria-label="Degree"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5M22 9v6"/></svg></span><span class="exp__years">2022</span><b class="exp__role">B.Sc. Information Technology</b><span class="exp__org">Alagappa University</span></li>
+            <li class="exp__item"><span class="exp__dot is--green"></span><span class="exp__icon is--green" role="img" aria-label="Online course"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4M8 10h5M8 13h8"/></svg></span><span class="exp__years">2018</span><b class="exp__role">UI/UX Course</b><span class="exp__org">J Spider Online Course</span></li>
+            <li class="exp__item"><span class="exp__dot is--yellow"></span><span class="exp__icon is--yellow" role="img" aria-label="Engineering diploma"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></span><span class="exp__years">2016</span><b class="exp__role">Diploma in Mechanical Engineering</b><span class="exp__org">PSN Polytechnic College</span></li>
           </ol>
         </div>
         <div class="about__bottom-rainbow"><div class="rainbow-vertical__3" id="aboutFloor"><svg viewBox="0 0 452 600" fill="none" preserveAspectRatio="none" aria-hidden="true"></svg></div></div>
@@ -1917,7 +1917,7 @@ if ('IntersectionObserver' in window) {
 .exp__item:hover{transform:translateY(-.3em) rotate(-1deg)}
 .exp__dot{position:absolute;top:.75em;left:1em;width:.8em;height:.8em;border-radius:50%;border:var(--line)}
 .exp__dot.is--orange{background:var(--orange)}.exp__dot.is--blue{background:var(--pink)}.exp__dot.is--green{background:var(--mango)}.exp__dot.is--yellow{background:var(--yellow)}
-.exp__item:first-child .exp__dot{animation:exp-live 1.8s ease-in-out infinite}
+/* education strip: no "live" pulse, nothing here is ongoing */
 @keyframes exp-live{50%{box-shadow:0 0 0 .35em rgba(232,131,107,.35)}}
 .exp__years{font-size:.6875em;font-weight:700;letter-spacing:.06em;opacity:.65;text-transform:uppercase}
 .exp__role{font-family:var(--display);font-weight:500;font-size:1.05em;line-height:1.1}
@@ -1927,7 +1927,7 @@ if ('IntersectionObserver' in window) {
 .exp__logo{position:absolute;top:.6em;right:.8em;height:1.15em;width:auto;max-width:58%;object-fit:contain}
 .exp__logo.is--square{height:2.1em;top:.3em;border-radius:.35em}
 .exp__icon{position:absolute;top:.45em;right:.8em;display:grid;place-items:center;width:1.7em;height:1.7em;border-radius:.45em;border:var(--line);box-shadow:var(--shadow-sm)}
-.exp__icon.is--green{background:var(--mango)}.exp__icon.is--yellow{background:var(--yellow)}
+.exp__icon.is--green{background:var(--mango)}.exp__icon.is--yellow{background:var(--yellow)}.exp__icon.is--orange{background:var(--orange)}.exp__icon.is--blue{background:var(--pink)}
 .exp__icon svg{width:1.1em;height:1.1em;fill:none;stroke:var(--dark);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .exp__item:hover .exp__icon svg{animation:exp-spin 1.2s ease-in-out}
 @keyframes exp-spin{50%{transform:rotate(90deg) scale(1.1)}}
