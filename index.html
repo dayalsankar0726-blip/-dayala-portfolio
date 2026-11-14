@@ -1294,7 +1294,7 @@ $('#communityGrid').innerHTML = [
   ['window-desk', 'Workation', 'Working at a laptop by a window overlooking a hill town', '40% 60%'],
   ['summit-arms', 'Summit Views', 'Arms wide on a mountain summit', '72% 45%'],
   ['trail-selfie', 'Trail Friends', 'Trail selfie with friends in the hills', '50% 40%'],
-  [null, '', '', ''], // Reserved for a replacement image
+  ['sunset-friends', 'Sunset Chats', 'Two friends by the water at sunset', '50% 30%'],
 ].map(([f, n, alt, pos]) => `<div class="community__grid-col"><div class="community-card">${f ? img('assets/about/' + f + '.webp', alt, pos) : '<span role="img" aria-label="Image placeholder"></span>'}${n ? `<div class="community-tag"><span>${n}</span></div>` : ''}</div></div>`).join('');
 $('#communityGrid').insertAdjacentHTML('afterbegin', `<div class="community__grid-lines" aria-hidden="true">${'<div class="community__grid-lines-group"><i class="community__grid-line"></i><i class="community__grid-line"></i></div>'.repeat(2)}</div>`);
 
