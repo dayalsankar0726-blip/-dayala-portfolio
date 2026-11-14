@@ -26,7 +26,7 @@
     // Figure-ground: filled and hollow shapes swap; on hover they trade places
     figure: [64, (k, a) => { const sw = (from, to) => A(a, `<animate attributeName="fill-opacity" values="${from};${to};${from}" dur="1.6s" repeatCount="indefinite"/>`);
       return `<g stroke="${k}" stroke-width="2.2" fill="${k}"><circle cx="16" cy="16" r="7" fill-opacity="1">${sw(1, 0)}</circle><circle cx="48" cy="16" r="7" fill-opacity="0">${sw(0, 1)}</circle><circle cx="16" cy="48" r="7" fill-opacity="0">${sw(0, 1)}</circle><circle cx="48" cy="48" r="7" fill-opacity="1">${sw(1, 0)}</circle></g>`; }],
-    // Prägnanz: overlapping shapes still read as the simplest forms; on hover they slide apart and back
+    // Pragnanz: overlapping shapes still read as the simplest forms; on hover they slide apart and back
     pragnanz: [104, (k, a) => `<g fill="none" stroke="${k}" stroke-width="2.3" stroke-linejoin="round"><circle cx="26" cy="28" r="13">${A(a, '<animate attributeName="cx" values="26;20;26" dur="1.6s" repeatCount="indefinite"/>')}</circle><rect x="30" y="22" width="22" height="22" rx="2">${A(a, '<animate attributeName="x" values="30;36;30" dur="1.6s" repeatCount="indefinite"/>')}</rect><path d="M72 58l14 24H58z">${A(a, '<animateTransform attributeName="transform" type="rotate" values="0 72 74;120 72 74;0 72 74" dur="1.6s" repeatCount="indefinite"/>')}</path></g>`],
     // Focal point: the one element that stands out gets seen first; on hover the accent dot pulses
     focal: [96, (k, a) => `<g fill="${k}">${[12, 36, 60, 84].map(x => [12, 36, 60, 84].map(y => (x === 60 && y === 60) ? '' : `<circle cx="${x}" cy="${y}" r="2.4"/>`).join('')).join('')}<circle cx="60" cy="60" r="6">${A(a, '<animate attributeName="r" values="6;10;6" dur="1.2s" repeatCount="indefinite"/>')}</circle></g>`],
@@ -67,7 +67,7 @@
     symmetry: ['Symmetry', 'mirror pairs open and close'],
     fate: ['Common fate', 'arrows travel together'],
     figure: ['Figure-ground', 'filled and hollow swap'],
-    pragnanz: ['Prägnanz', 'simple shapes slide and turn'],
+    pragnanz: ['Pragnanz', 'simple shapes slide and turn'],
     focal: ['Focal point', 'the accent dot pulses'],
     parallel: ['Parallelism', 'parallel lines tilt together'],
     synchrony: ['Synchrony', 'dots blink in unison'],

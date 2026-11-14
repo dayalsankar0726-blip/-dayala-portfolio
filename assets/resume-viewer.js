@@ -48,15 +48,15 @@
     dialog.innerHTML =
       '<div class="rv__panel">' +
         '<div class="rv__bar">' +
-          '<h2 class="rv__title" id="rv-title">Résumé</h2>' +
+          '<h2 class="rv__title" id="rv-title">Resume</h2>' +
           '<a class="rv__btn rv__btn--primary" href="' + PDF + '" download="' + FILE + '">' + ICON_DL + 'Download PDF</a>' +
           '<a class="rv__btn" href="' + PDF + '" target="_blank" rel="noopener">' + ICON_OPEN + '<span class="rv__open-label">Open in new tab</span></a>' +
-          '<button class="rv__btn rv__btn--icon" type="button" aria-label="Close résumé" data-rv-close>&times;</button>' +
+          '<button class="rv__btn rv__btn--icon" type="button" aria-label="Close resume" data-rv-close>&times;</button>' +
         '</div>' +
         '<div class="rv__body" data-lenis-prevent></div>' +
       '</div>';
     // Give the icon-only "open" button a name on phones.
-    dialog.querySelector('a[target]').setAttribute('aria-label', 'Open résumé PDF in a new tab');
+    dialog.querySelector('a[target]').setAttribute('aria-label', 'Open resume PDF in a new tab');
     body = dialog.querySelector('.rv__body');
     document.body.appendChild(dialog);
 
@@ -73,7 +73,7 @@
     if (!dialog) build();
     lastFocus = trigger;
     if (!body.firstChild) {
-      body.innerHTML = '<img class="rv__img" src="' + IMG + '" width="1313" height="1700" alt="Dayala Sankaran résumé. Use Download PDF for the full text.">';
+      body.innerHTML = '<img class="rv__img" src="' + IMG + '" width="1313" height="1700" alt="Dayala Sankaran resume. Use Download PDF for the full text.">';
     }
     scroller(false);
     document.documentElement.style.overflow = 'hidden';
