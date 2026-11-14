@@ -42,7 +42,8 @@ jobs:
         run: |
           LONG="public,max-age=31536000,immutable"
           aws s3 sync site/ "s3://$S3_BUCKET/" --delete --exclude '*.html' \
-            --exclude '*.webp' --exclude '*.avif' --exclude '*.css' --exclude '*.js' --cache-control "$LONG"
+            --exclude '*.webp' --exclude '*.avif' --exclude '*.css' --exclude '*.js' \
+            --exclude 'robots.txt' --exclude 'sitemap.xml' --cache-control "$LONG"
           aws s3 sync site/ "s3://$S3_BUCKET/" --exclude '*' --include '*.webp' \
             --content-type image/webp --cache-control "$LONG"
           aws s3 sync site/ "s3://$S3_BUCKET/" --exclude '*' --include '*.avif' \
@@ -57,6 +58,8 @@ jobs:
         run: |
           aws s3 sync site/ "s3://$S3_BUCKET/" --exclude '*' --include '*.html' \
             --content-type 'text/html; charset=utf-8' --cache-control "no-cache"
+          aws s3 cp site/robots.txt "s3://$S3_BUCKET/robots.txt" --content-type 'text/plain; charset=utf-8' --cache-control "no-cache"
+          aws s3 cp site/sitemap.xml "s3://$S3_BUCKET/sitemap.xml" --content-type 'application/xml' --cache-control "no-cache"
 
       - name: Refresh CloudFront
         run: aws cloudfront create-invalidation --distribution-id "$CF_DISTRIBUTION_ID" --paths '/*'

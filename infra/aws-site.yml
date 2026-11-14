@@ -75,6 +75,10 @@ Resources:
         Enabled: true
         Comment: Dayala portfolio
         DefaultRootObject: index.html
+        # A private S3 origin answers a missing file with 403, so both map to the friendly 404 page
+        CustomErrorResponses:
+          - { ErrorCode: 403, ResponseCode: 404, ResponsePagePath: /404.html, ErrorCachingMinTTL: 60 }
+          - { ErrorCode: 404, ResponseCode: 404, ResponsePagePath: /404.html, ErrorCachingMinTTL: 60 }
         HttpVersion: http2and3
         IPV6Enabled: true
         PriceClass: PriceClass_200   # includes India and Asia edge locations

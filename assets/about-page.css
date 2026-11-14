@@ -42,3 +42,7 @@
 .about-title-word::after{z-index:-1;color:#fff;-webkit-text-stroke:.21em #fff}
 
 .principle{position:relative}.principle:focus-visible{outline:3px solid var(--light);outline-offset:5px}
+
+/* Accessibility: larger tap areas for small footer links */
+.page-footer a,.text-link{position:relative}
+.page-footer a::after,.text-link::after{content:"";position:absolute;inset:-4px -2px}

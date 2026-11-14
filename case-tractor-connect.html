@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tractor Connect 2.0 · Dayala Sankaran</title>
 <meta name="description" content="Case study: redesigning a connected-tractor app so farmers get plain-language answers instead of fault codes.">
+<link rel="canonical" href="https://www.dayala.design/case-tractor-connect.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dayala Sankaran">
+<meta property="og:title" content="Tractor Connect 2.0 · Dayala Sankaran">
+<meta property="og:description" content="Case study: redesigning a connected-tractor app so farmers get plain-language answers instead of fault codes.">
+<meta property="og:url" content="https://www.dayala.design/case-tractor-connect.html">
+<meta property="og:image" content="https://www.dayala.design/assets/brand/share-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dayala Sankaran, Senior UX/UI Designer, Chennai">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=DM+Sans:opsz,wght@9..40,600;9..40,700&display=swap" rel="stylesheet">
 <style>
@@ -202,13 +213,14 @@ img{display:block;max-width:100%}
 
 /* ---------- 4. Research ---------- */
 .research-top{display:grid;grid-template-columns:1.2fr 1fr;gap:3em;align-items:end;margin-bottom:3em}
-.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1em}
+.research-top>*{min-width:0}
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1em}
 .num{padding:1.25em;text-align:center}
 .num__v{font-family:var(--display);font-size:3.5em;line-height:1}
 .num:nth-child(1) .num__v{color:var(--orange)}
 .num:nth-child(2) .num__v{color:var(--pink)}
 .num:nth-child(3) .num__v{color:var(--mango)}
-.num p{margin-top:.25em;font-weight:700}
+.num p{margin-top:.25em;font-weight:700;overflow-wrap:anywhere}
 .methods{display:flex;flex-wrap:wrap;gap:.5em;margin-bottom:3em}
 .method{display:inline-flex;align-items:center;gap:.5em;background:var(--light-plus);border:var(--line);border-radius:10em;padding:.45em 1em .45em .45em;font-weight:700}
 .method b{display:grid;place-items:center;width:1.6em;height:1.6em;border-radius:50%;background:var(--dark);color:#fff;font-size:.8em}
@@ -452,6 +464,7 @@ img{display:block;max-width:100%}
 <style>@media(max-width:767px){.nav-bar__inner > .btn{display:inline-flex}}</style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="nav-wrap">
   <nav class="nav-bar">
@@ -468,7 +481,7 @@ img{display:block;max-width:100%}
 
 <nav class="cs-pill" id="csPill" aria-label="Case study sections"></nav>
 
-<main>
+<main id="main">
   <!-- 1. OVERVIEW -->
   <section class="cs-hero" id="overview">
     <div class="container cs-hero__top">
@@ -1005,6 +1018,10 @@ if ('IntersectionObserver' in window) {
 .is--gl > .gl-chip{opacity:1;transform:none}
 .cs-hero__stage > .gl-chip{top:1em;bottom:auto;left:1.2em}
 @media (hover:none){.gl-chip{display:none}}
+/* Accessibility: skip link, larger tap areas */
+.skip-link{position:fixed;top:-100px;left:1em;z-index:1000;padding:.6em 1.1em;background:#fff;color:var(--dark);border:.125rem solid var(--dark);border-radius:10em;font-weight:700;text-decoration:none}
+.skip-link:focus{top:1em}
+.underline-link::after{content:"";position:absolute;inset:-4px -2px}
 </style>
 <script src="assets/inner-mascot.js"></script>
 <link rel="stylesheet" href="assets/case-compact.css">
